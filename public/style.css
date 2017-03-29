@@ -1,0 +1,38 @@
+body{
+	background-color: orange;
+}
+.nav>li>a>img{
+	max-width: 20px;
+}
+
+.countdown{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	color: white;
+}
+
+.countdown p{
+	padding-right: 20px;
+	border-right: 1px solid #FFF;
+}
+
+.navbar-default{
+	background-color: rgba(255, 255, 255, 0);
+	border-color: transparent;
+}
+
+nav.navbar.navbar-default{
+	margin-bottom:0px;
+}
+.home{
+	height:100vh;
+	color:white;
+	background: url(http://www.planwallpaper.com/static/images/518079-background-hd.jpg) no-repeat center center fixed;
+	background-size:cover;
+}
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
