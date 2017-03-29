@@ -44,6 +44,12 @@ module.exports = app
   .use(bodyParser.urlencoded({ extended: true }))
   .use(bodyParser.json())
 
+  //webpack middleware (helps to render images)
+  .use(require('webpack-dev-middleware')(compiler, {
+      noInfo: true,
+      publicPath: config.output.path
+    }));
+
   // Authentication middleware
   .use(passport.initialize())
   .use(passport.session())
