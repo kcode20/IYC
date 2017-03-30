@@ -7,6 +7,7 @@ const {resolve} = require('path')
 const passport = require('passport')
 const PrettyError = require('pretty-error')
 const finalHandler = require('finalhandler')
+// const compiler = require('../webpack.config')
 // PrettyError docs: https://www.npmjs.com/package/pretty-error
 
 // Bones has a symlink from node_modules/APP to the root of the app.
@@ -45,10 +46,10 @@ module.exports = app
   .use(bodyParser.json())
 
   //webpack middleware (helps to render images)
-  .use(require('webpack-dev-middleware')(compiler, {
-      noInfo: true,
-      publicPath: config.output.path
-    }));
+  // .use(require('webpack-dev-middleware')(compiler, {
+  //     noInfo: true,
+  //     publicPath: config.output.path
+  //   }))
 
   // Authentication middleware
   .use(passport.initialize())
