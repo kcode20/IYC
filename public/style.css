@@ -36,3 +36,8 @@ nav.navbar.navbar-default{
   top: 50%;
   transform: translateY(-50%);
 }
+
+.option{
+	margin: 2px;
+	font-weight: normal;
+}
