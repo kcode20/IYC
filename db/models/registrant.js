@@ -13,10 +13,9 @@ const Registrant = db.define('registrant', {
 		}
   },
   phone: {
-    type: Sequelize.INTEGER,
-    allowNull: false
+    type: Sequelize.STRING,
   }, 
-  age: Sequelize.INTEGER,
+  age: Sequelize.ENUM('0-12', '13-17', '18-25', '25-39', '40+'),
   gender: Sequelize.ENUM('female', 'male'),
   auxilary: Sequelize.ARRAY(Sequelize.TEXT),
   transport: Sequelize.BOOLEAN

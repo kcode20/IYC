@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 import Select from 'react-select';
+import Login from './Login'
 
 export class Registration extends React.Component{
     constructor(props) {
@@ -23,12 +24,12 @@ export class Registration extends React.Component{
 
                <div>
                 <Navbar/>
+                <Login/>
                 <div className="center_div container">
                 	<h1> Register for IYC </h1>
                 	<form className='' onSubmit={evt => {
                 	  evt.preventDefault()
-                	  console.log("I submitted with: ", evt.target.name.value, evt.target.email.value, evt.target.phone.value, evt.target.age.value, evt.target.gender.value, evt.target.church.value, evt.target.pastor.value, evt.target.youthleader.value, evt.target.transport.value)
-                      console.log("This is the state: ", this.state);
+                	  this.props.register(evt.target.name.value, evt.target.email.value, evt.target.phone.value, evt.target.age.value, evt.target.gender.value, evt.target.church.value, evt.target.pastor.value, evt.target.youthleader.value, evt.target.transport.value, this.state.auxilary);
                 	}}>
                 	<fieldset>
                 		<legend> Contact Information </legend> 
@@ -101,8 +102,8 @@ export class Registration extends React.Component{
                         
                         <label> Do You Want to Request Transportation? </label>
                         <br/>
-                        <label className="option"> <input type="radio" name="transport" value="request-transport"/> Yes </label>
-                        <label className="option"> <input type="radio" name="transport" value="has-transport"/> No </label>
+                        <label className="option"> <input type="radio" name="transport" value="true"/> Yes </label>
+                        <label className="option"> <input type="radio" name="transport" value="false"/> No </label>
                         <br/><br/>
 
                 	</fieldset>
@@ -117,5 +118,17 @@ export class Registration extends React.Component{
 }
 
 import {connect} from 'react-redux'
+import {register} from 'APP/app/reducers/registrant'
 
-export default connect ()(Registration)
+const mapDispatchToProps= function (dispatch) {
+  return {
+    register: function (name, email, phone, age, gender, church, pastor, leader, transport, auxilary) {
+      console.log("registration details: ", name, email, phone, age, gender, church, pastor, leader, transport, auxilary);
+      dispatch(register(name, email, phone, age, gender, church, pastor, leader, transport, auxilary));
+    }
+  };
+};
+export default connect (null, mapDispatchToProps)(Registration)
+
+
+
