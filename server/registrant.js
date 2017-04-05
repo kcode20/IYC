@@ -2,6 +2,7 @@
 
 const db = require('APP/db')
 const Registrant = db.model('registrant')
+const Church= db.model('church')
 
 const {mustBeLoggedIn, forbidden,} = require('./auth.filters')
 
@@ -12,7 +13,7 @@ module.exports = require('express').Router()
 		.catch(next))
 	.post('/', (req, res, next) =>{
 		console.log(req.body)
-		Registrant.create(req.body)
+		Registrant.create(req.body, {include: [Church]})
 		.then(registrant => res.status(201).json(registrant))
 		.catch(next)})
 	.get('/:id', mustBeLoggedIn, (req, res, next) => 

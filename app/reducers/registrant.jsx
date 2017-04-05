@@ -48,7 +48,8 @@ export const getAllRegistrants = () =>
 export const register = (name, email, phone, age, gender, church, pastor, leader, transport, auxilary) => 
   dispatch =>
     axios.post('/api/registrant/',
-      {name, email, phone, age, gender, transport, auxilary})
+      {name, email, phone, age, gender, transport, auxilary, church: {church, pastor, leader}})
+      .then(response => dispatch(loadRegistrant(response.data)))
       .catch(failed => console.error(failed))
 
 export default reducer

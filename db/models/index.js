@@ -12,4 +12,4 @@ const Church = require('./church')
 OAuth.belongsTo(User)
 Registrant.belongsTo(Church)
 User.hasOne(OAuth)
-module.exports = {User, Registrant}
+module.exports = {User, Registrant, Church}
