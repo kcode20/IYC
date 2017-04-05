@@ -6,7 +6,10 @@
 
 const User = require('./user')
 const OAuth = require('./oauth')
+const Registrant = require('./registrant')
+const Church = require('./church')
 
 OAuth.belongsTo(User)
+Registrant.belongsTo(Church)
 User.hasOne(OAuth)
-module.exports = {User}
+module.exports = {User, Registrant, Church}
