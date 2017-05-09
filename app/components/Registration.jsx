@@ -24,7 +24,6 @@ export class Registration extends React.Component{
 
                <div>
                 <Navbar/>
-                <Login/>
                 <div className="center_div container">
                 	<h1> Register for IYC </h1>
                 	<form className='' onSubmit={evt => {

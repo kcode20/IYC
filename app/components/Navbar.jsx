@@ -12,7 +12,7 @@ export const Navbar = () => (
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
           </button>
-          <Link className="navbar-brand" to="/home">Brand</Link>
+          <Link className="navbar-brand" to="/home"><img src='images/iyc.png' height='85px' /></Link>
         </div>
 
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -21,7 +21,7 @@ export const Navbar = () => (
             <ul className="nav navbar-nav">
               <li className="countdown"><p>Countdown</p></li>
               <li><a href="https://www.facebook.com/afciyc/"><img src="images/Facebook.png"/></a></li>
-              <li><a href="#"><img src="images/Instagram.png"/></a></li>
+              <li><a href="https://www.instagram.com/iyc.afc/"><img src="images/Instagram.png"/></a></li>
               <li><a href="https://twitter.com/afciyc"><img src="images/Twitter.png"/></a></li>
             </ul>
             <br/>
