@@ -34,7 +34,7 @@ export class Registration extends React.Component{
                     	<h1> Register for IYC </h1>
                     	<form className='' onSubmit={evt => {
                     	  evt.preventDefault()
-                    	  this.props.register(evt.target.name.value, evt.target.email.value, evt.target.phone.value, evt.target.age.value, evt.target.gender.value, evt.target.church.value, evt.target.pastor.value, evt.target.youthleader.value, evt.target.transport.value, this.state.auxilary);
+                    	  this.props.register(evt.target.name.value, evt.target.email.value, evt.target.phone.value, evt.target.age.value, evt.target.gender.value, evt.target.church.value, evt.target.pastor.value, evt.target.youthleader.value, evt.target.transport.value, this.state.auxilary, false);
                     	}}>
                     	<fieldset>
                     		<legend> Contact Information </legend> 
@@ -89,19 +89,110 @@ export class Registration extends React.Component{
                             <label>  In My Home Church I am... </label>
                             <br/>
 
-                            <label className="option"><input name="auxilary" onChange={this.handleInputChange} type="checkbox" value="Pastor"/> Pastor </label>
-                            <label className="option"><input name="auxilary" onChange={this.handleInputChange} type="checkbox" value="Minister"/> Minister </label>
-                            <label className="option"><input name="auxilary" onChange={this.handleInputChange} type="checkbox" value="Musician"/> Musician </label>
-                            <label className="option"><input name="auxilary" onChange={this.handleInputChange} type="checkbox" value="Choir Director"/> Choir Director </label>
-                            <label className="option"><input name="auxilary" onChange={this.handleInputChange} type="checkbox" value="Choir Member"/> Choir Member </label>
-                            <label className="option"><input name="auxilary" onChange={this.handleInputChange} type="checkbox" value="Sunday School Superintendent"/> Sunday School Superintendent </label>
-                            <label className="option"><input name="auxilary" onChange={this.handleInputChange} type="checkbox" value="Sunday School Teacher"/> Sunday School Teacher </label>
-                            <label className="option"><input name="auxilary" onChange={this.handleInputChange} type="checkbox" value="Kitchen Volunteer"/> Kitchen Volunteer </label>
-                            <label className="option"><input name="auxilary" onChange={this.handleInputChange} type="checkbox" value="Usher"/> Usher </label>
-                            <label className="option"><input name="auxilary" onChange={this.handleInputChange} type="checkbox" value="Youth Leader"/> Youth Leader </label>
-                            <label className="option"><input name="auxilary" onChange={this.handleInputChange} type="checkbox" value="Church Volunteer"/> Church Volunteer </label>
-                            <label className="option"><input name="auxilary" onChange={this.handleInputChange} type="checkbox" value="N/A"/> Not Working in My Local Church </label>
-                            <label className="option"><input name="auxilary" onChange={this.handleInputChange} type="checkbox" value="Willing"/> Dont Work in an auxilary at my church, BUT I would love to start </label>
+                            <label className="option">
+                                <input
+                                    name="auxilary"
+                                    onChange={this.handleInputChange}
+                                    type="checkbox"
+                                    value="Pastor"/>
+                                Pastor
+                            </label>
+                            <label className="option">
+                                <input
+                                    name="auxilary"
+                                    onChange={this.handleInputChange}
+                                    type="checkbox"
+                                    value="Minister"/>
+                                Minister
+                            </label>
+                            <label className="option">
+                                <input
+                                    name="auxilary"
+                                    onChange={this.handleInputChange}
+                                    type="checkbox"
+                                    value="Musician"/>
+                                Musician
+                            </label>
+                            <label className="option">
+                                <input
+                                    name="auxilary"
+                                    onChange={this.handleInputChange}
+                                    type="checkbox"
+                                    value="Choir Director"/>
+                                Choir Director
+                            </label>
+                            <label className="option">
+                                <input
+                                    name="auxilary"
+                                    onChange={this.handleInputChange}
+                                    type="checkbox"
+                                    value="Choir Member"/>
+                                Choir Member
+                            </label>
+                            <label className="option">
+                                <input
+                                    name="auxilary"
+                                    onChange={this.handleInputChange}
+                                    type="checkbox"
+                                    value="Sunday School Superintendent"/>
+                                Sunday School Superintendent
+                            </label>
+                            <label className="option">
+                                <input
+                                    name="auxilary"
+                                    onChange={this.handleInputChange}
+                                    type="checkbox"
+                                    value="Sunday School Teacher"/>
+                                Sunday School Teacher
+                            </label>
+                            <label className="option">
+                                <input
+                                    name="auxilary"
+                                    onChange={this.handleInputChange}
+                                    type="checkbox"
+                                    value="Kitchen Volunteer"/>
+                                Kitchen Volunteer
+                            </label>
+                            <label className="option">
+                                <input
+                                    name="auxilary"
+                                    onChange={this.handleInputChange}
+                                    type="checkbox"
+                                    value="Usher"/>
+                                Usher
+                            </label>
+                            <label className="option">
+                                <input
+                                    name="auxilary"
+                                    onChange={this.handleInputChange}
+                                    type="checkbox"
+                                    value="Youth Leader"/>
+                                Youth Leader
+                            </label>
+                            <label className="option">
+                                <input
+                                    name="auxilary"
+                                    onChange={this.handleInputChange}
+                                    type="checkbox"
+                                    value="Church Volunteer"/>
+                                Church Volunteer
+                            </label>
+                            <label className="option">
+                                <input
+                                    name="auxilary"
+                                    onChange={this.handleInputChange}
+                                    type="checkbox"
+                                    value="N/A"/>
+                                Not Working in My Local Church
+                            </label>
+                            <label className="option">
+                                <input
+                                    name="auxilary"
+                                    onChange={this.handleInputChange}
+                                    type="checkbox"
+                                    value="Willing"/>
+                                Dont Work in an auxilary at my church, BUT I would love to start
+                            </label>
 
                             <br/><br/>
 
@@ -112,8 +203,9 @@ export class Registration extends React.Component{
                             <br/><br/>
 
                     	</fieldset>
-                          <PaypalExpressBtn client={client} currency={'USD'} total={1.00} />
-                    	  <button className='btn btn-primary' type="submit" value="Signup" > Signup </button>
+
+                        <PaypalExpressBtn client={client} currency={'USD'} total={1.00} />
+                        <button className='btn btn-primary' type="submit" value="Signup" > Signup </button>
 
                     	</form>
                     </div>
@@ -128,7 +220,7 @@ import {register} from 'APP/app/reducers/registrant'
 
 const mapDispatchToProps= function (dispatch) {
   return {
-    register: function (name, email, phone, age, gender, church, pastor, leader, transport, auxilary) {
+    register: function (name, email, phone, age, gender, church, pastor, leader, transport, auxilary, payment) {
       console.log("registration details: ", name, email, phone, age, gender, church, pastor, leader, transport, auxilary);
       dispatch(register(name, email, phone, age, gender, church, pastor, leader, transport, auxilary));
     }

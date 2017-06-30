@@ -45,10 +45,10 @@ export const getAllRegistrants = () =>
       })
       .catch(failed => console.error(failed));
 
-export const register = (name, email, phone, age, gender, church, pastor, leader, transport, auxilary) => 
+export const register = (name, email, phone, age, gender, church, pastor, leader, transport, auxilary, payment) =>
   dispatch =>
     axios.post('/api/registrant/',
-      {name, email, phone, age, gender, transport, auxilary, church: {church, pastor, leader}})
+      {name, email, phone, age, gender, transport, auxilary, payment, church: {church, pastor, leader}})
       .then(response => dispatch(loadRegistrant(response.data)))
       .catch(failed => console.error(failed))
 
