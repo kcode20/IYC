@@ -1,7 +1,8 @@
 import React from 'react';
 import Navbar from './Navbar';
+import Payments from './Payments';
 import Select from 'react-select';
-import PaypalExpressBtn from 'react-paypal-express-checkout';
+import {Link} from 'react-router';
 
 
 export class Registration extends React.Component{
@@ -21,10 +22,6 @@ export class Registration extends React.Component{
     }
 
     render(){
-        const client = {
-            sandbox:    'AbaW700K_ECq9B8fXAN9FIQ7W9Dgq9sogw71t7flLCVNXdC6qFgGfStwqn9m6ZA4KR9hWeD9UBMymGtY',
-            production: 'YOUR-PRODUCTION-APP-ID',
-        }
         return(
                <div className="container">
                <Navbar/>
@@ -204,8 +201,7 @@ export class Registration extends React.Component{
 
                     	</fieldset>
 
-                        <PaypalExpressBtn client={client} currency={'USD'} total={1.00} />
-                        <button className='btn btn-primary' type="submit" value="Signup" > Signup </button>
+                        <Link to='/registration/payments'><button className='btn btn-primary' type="submit" value="Signup" > Next </button></Link>
 
                     	</form>
                     </div>
