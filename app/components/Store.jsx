@@ -3,7 +3,7 @@ import Navbar from './Navbar'
 
 export const Store = () => (
    <div>
-    <Navbar/>
+   <Navbar/>
     <div>
     	<h1> This is the Its Lit Store </h1>
     </div>

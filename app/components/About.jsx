@@ -3,7 +3,7 @@ import Navbar from './Navbar'
 
 export const About = () => (
    <div>
-    <Navbar/>
+   <Navbar/>
     <div>
     	<h1> Let me tell you about IYC </h1>
     </div>
