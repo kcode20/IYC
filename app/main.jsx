@@ -19,6 +19,7 @@ const ExampleApp = connect(
 ) (
   ({ user, children }) =>
     <div>
+      <Navbar/>
       {children}
     </div>
 )

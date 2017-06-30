@@ -2,8 +2,7 @@ import React from 'react'
 import Navbar from './Navbar'
 
 export const Home = () => (
-   <div className="home">
-    <Navbar/>
+   <div className="home fullscreen-bg">
    </div>
 )
 
