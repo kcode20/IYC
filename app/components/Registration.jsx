@@ -1,7 +1,9 @@
-import React from 'react'
-import Navbar from './Navbar'
+import React from 'react';
+import Navbar from './Navbar';
 import Select from 'react-select';
-import Login from './Login'
+import Login from './Login';
+import PaypalExpressBtn from 'react-paypal-express-checkout';
+
 
 export class Registration extends React.Component{
     constructor(props) {
@@ -20,6 +22,10 @@ export class Registration extends React.Component{
     }
 
     render(){
+        const client = {
+            sandbox:    'AbaW700K_ECq9B8fXAN9FIQ7W9Dgq9sogw71t7flLCVNXdC6qFgGfStwqn9m6ZA4KR9hWeD9UBMymGtY',
+            production: 'YOUR-PRODUCTION-APP-ID',
+        }
         return(
 
                <div>
@@ -55,7 +61,7 @@ export class Registration extends React.Component{
                              <option value="25-39">25-39</option>
                              <option value="40+">40+</option>
                            </select>
-                       </label>    
+                       </label>
                        <br/>
 
                 	   <label> Gender </label>
@@ -66,8 +72,8 @@ export class Registration extends React.Component{
 
                 	</fieldset>
                 	<fieldset>
-                		<legend> Church Information </legend> 
-                		
+                		<legend> Church Information </legend>
+
                 		<label> Church Name </label>
                         <small> (Please List Your Branch Church) </small>
                         <input className="form-control" placeholder="Church Name" name="church" />
@@ -99,7 +105,7 @@ export class Registration extends React.Component{
                         <label className="option"><input name="auxilary" onChange={this.handleInputChange} type="checkbox" value="Willing"/> Dont Work in an auxilary at my church, BUT I would love to start </label>
 
                         <br/><br/>
-                        
+
                         <label> Do You Want to Request Transportation? </label>
                         <br/>
                         <label className="option"> <input type="radio" name="transport" value="true"/> Yes </label>
@@ -108,8 +114,9 @@ export class Registration extends React.Component{
 
                 	</fieldset>
 
+                    <PaypalExpressBtn client={client} currency={'USD'} total={1.00} />
                 	  <button className='btn btn-primary' type="submit" value="Signup" > Signup </button>
-                	
+
                 	</form>
                 </div>
                </div>
