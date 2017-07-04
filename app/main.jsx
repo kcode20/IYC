@@ -31,8 +31,7 @@ render (
         <IndexRedirect to="/home" />
         <Route path="/home" component={Home} />
         <Route path="registration" component={Registration}/>
-          <Route path="registration/payments" component={Payments} />
-        <Route />
+        <Route path="registration/payments" component={Payments} />
         <Route path="about" component={About} />
         <Route path="store" component={Store} />
       </Route>

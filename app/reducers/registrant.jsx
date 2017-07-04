@@ -52,4 +52,12 @@ export const register = (name, email, phone, age, gender, church, pastor, leader
       .then(response => dispatch(loadRegistrant(response.data)))
       .catch(failed => console.error(failed))
 
+export const updatePayment = (id, payment) =>
+  dispatch =>
+    axios.put('/api/registrant'+ id)
+    .then(response => {
+      console.log(response)
+    })
+    .catch(failed => console.error(failed))
+
 export default reducer
