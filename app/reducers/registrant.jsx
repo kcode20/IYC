@@ -33,7 +33,7 @@ export const getRegistrant = (id) =>
   dispatch =>
     axios.get('/api/registrant/'+ id)
       .then(response => {
-        dispatch(loadRegistrant(response))
+        dispatch(loadRegistrant(response.data))
       })
       .catch(failed => console.error(failed));
 
@@ -54,10 +54,8 @@ export const register = (name, email, phone, age, gender, church, pastor, leader
 
 export const updatePayment = (id, payment) =>
   dispatch =>
-    axios.put('/api/registrant'+ id)
-    .then(response => {
-      console.log(response)
-    })
+    axios.put('/api/registrant/'+ id, {payment} )
+    .then(response => dispatch(getRegistrant(id)))
     .catch(failed => console.error(failed))
 
 export default reducer
