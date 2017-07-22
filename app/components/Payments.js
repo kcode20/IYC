@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './Navbar'
 import PaypalExpressBtn from 'react-paypal-express-checkout';
 import {Link, browserHistory} from 'react-router';
+import { paypalSandboxKey, paypalProductionKey } from 'APP/secrets'
 
 export class Payments extends React.Component {
 	constructor(){
@@ -44,8 +45,8 @@ export class Payments extends React.Component {
 
 	render(){
 		const client = {
-	            sandbox:    'AWzrvEgSK4eh_SPkMxR4TVhQ_kA3ZtUsFf2vOB2YSyoLa2SF9Hq9_bAs78DQJvwGMyPjmCTL2YONB2Z7',
-	            production: 'AaXmoxzFwd0HRcUAEnVPtjadkuDkaIFWkC0GrD8rxwHd2AueK5VHs2azee3fieppk9t7XHPu-lkzAdXA',
+	            sandbox: paypalSandboxKey,
+	            production: paypalProductionKey,
 	        }
 		return (
 			<div className="container">
