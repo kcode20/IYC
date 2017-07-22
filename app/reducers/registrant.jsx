@@ -25,10 +25,7 @@ export const loadRegistrant = registrant => ({
   type: GET_ONE_REGISTRANT, registrant
 })
 
-
 /*---------- ASYNC ACTION CREATORS (THUNK) ------------------ */
-
-
 export const getRegistrant = (id) =>
   dispatch =>
     axios.get('/api/registrant/'+ id)
