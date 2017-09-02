@@ -28,7 +28,7 @@ export const Navbar = () => (
             <ul className="nav navbar-nav">
               <li><Link to="/registration">Register</Link></li>
               <li><Link to="/about">About</Link></li>
-              <li><Link to="/store">It's Lit Store</Link></li>
+              <li><a href="https://iycapparel.itemorder.com/">It's Lit Store</a></li>
             </ul>
           </ul>
         </div>
