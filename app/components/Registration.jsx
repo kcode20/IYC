@@ -31,7 +31,6 @@ export class Registration extends React.Component{
     }
 
     handleInputChange(event) {
-        console.log('I am in handleInput')
         let id= event.target.id;
         let classNames= this.state.className;
         classNames[id]= this.changeColor(id)
@@ -46,7 +45,6 @@ export class Registration extends React.Component{
     }
 
     changeColor(id){
-        console.log('I am in changeColor. Before the className was: ', this.state.className);
         let color= (this.state.className[id] === 'btn btn-default') ? 'btn btn-danger' : 'btn btn-default';
         return color;
     }
@@ -289,7 +287,6 @@ import {register} from 'APP/app/reducers/registrant'
 const mapDispatchToProps= function (dispatch) {
   return {
     register: function (name, email, phone, age, gender, church, pastor, leader, transport, auxilary, payment) {
-      console.log("registration details: ", name, email, phone, age, gender, church, pastor, leader, transport, auxilary, payment);
       return dispatch(register(name, email, phone, age, gender, church, pastor, leader, transport, auxilary, payment));
     }
   };
