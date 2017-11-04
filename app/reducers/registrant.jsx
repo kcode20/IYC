@@ -25,15 +25,12 @@ export const loadRegistrant = registrant => ({
   type: GET_ONE_REGISTRANT, registrant
 })
 
-
 /*---------- ASYNC ACTION CREATORS (THUNK) ------------------ */
-
-
 export const getRegistrant = (id) =>
   dispatch =>
     axios.get('/api/registrant/'+ id)
       .then(response => {
-        dispatch(loadRegistrant(response))
+        dispatch(loadRegistrant(response.data))
       })
       .catch(failed => console.error(failed));
 
@@ -45,11 +42,17 @@ export const getAllRegistrants = () =>
       })
       .catch(failed => console.error(failed));
 
-export const register = (name, email, phone, age, gender, church, pastor, leader, transport, auxilary) => 
+export const register = (name, email, phone, age, gender, church, pastor, leader, transport, auxilary, payment) =>
   dispatch =>
     axios.post('/api/registrant/',
-      {name, email, phone, age, gender, transport, auxilary, church: {church, pastor, leader}})
+      {name, email, phone, age, gender, transport, auxilary, payment, church: {church, pastor, leader}})
       .then(response => dispatch(loadRegistrant(response.data)))
       .catch(failed => console.error(failed))
+
+export const updatePayment = (id, payment) =>
+  dispatch =>
+    axios.put('/api/registrant/'+ id, {payment} )
+    .then(response => dispatch(getRegistrant(id)))
+    .catch(failed => console.error(failed))
 
 export default reducer

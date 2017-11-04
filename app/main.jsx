@@ -13,13 +13,13 @@ import Navbar from './components/Navbar'
 import Registration from './components/Registration'
 import About from './components/About'
 import Store from './components/Store'
+import Payments from './components/Payments'
 
 const ExampleApp = connect(
   ({ auth }) => ({ user: auth })
 ) (
   ({ user, children }) =>
     <div>
-      <Navbar/>
       {children}
     </div>
 )
@@ -30,7 +30,8 @@ render (
       <Route path="/" component={ExampleApp}>
         <IndexRedirect to="/home" />
         <Route path="/home" component={Home} />
-        <Route path="registration" component={Registration} />
+        <Route path="registration" component={Registration}/>
+        <Route path="registration/payments" component={Payments} />
         <Route path="about" component={About} />
         <Route path="store" component={Store} />
       </Route>

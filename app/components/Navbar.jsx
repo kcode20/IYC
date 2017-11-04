@@ -4,7 +4,7 @@ import {Link} from 'react-router'
 export const Navbar = () => (
     <nav className="navbar navbar-default">
       <div className="container-fluid">
-        
+
         <div className="navbar-header">
           <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             <span className="sr-only">Toggle navigation</span>
@@ -28,10 +28,11 @@ export const Navbar = () => (
             <ul className="nav navbar-nav">
               <li><Link to="/registration">Register</Link></li>
               <li><Link to="/about">About</Link></li>
-              <li><Link to="/store">It's Lit Store</Link></li>
+              <li><a href="https://iycapparel.itemorder.com/">It's Lit Store</a></li>
             </ul>
           </ul>
         </div>
+
       </div>
     </nav>
 )

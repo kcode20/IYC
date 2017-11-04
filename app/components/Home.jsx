@@ -3,6 +3,7 @@ import Navbar from './Navbar'
 
 export const Home = () => (
    <div className="home fullscreen-bg">
+   	<Navbar/>
    </div>
 )
 

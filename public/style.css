@@ -1,5 +1,5 @@
 body{
-	background-color: orange;
+	background-color: black;
 }
 .nav>li>a>img{
 	max-width: 20px;
@@ -22,12 +22,12 @@ body{
 }
 
 nav.navbar.navbar-default{
-	margin-bottom:0px;
+	margin-bottom:20px;
 }
 .home{
 	height:100vh;
 	color:white;
-	background: url(images/iyc2.jpg) no-repeat center center fixed;
+	background: url(/images/iyc2.png) no-repeat center center fixed;
 	background-size:cover;
 }
 
@@ -40,4 +40,25 @@ nav.navbar.navbar-default{
 .option{
 	margin: 2px;
 	font-weight: normal;
+}
+
+.registration-form{
+	background-color:white;
+}
+
+.participation{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.participation label{
+	/*margin:10px;*/
+}
+
+.checkbox{
+	display: none;
 }
