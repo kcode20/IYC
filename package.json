@@ -57,6 +57,7 @@
     "pg": "^6.1.0",
     "pretty-error": "^2.0.2",
     "react": "^15.3.2",
+    "react-bootstrap": "^0.31.5",
     "react-countdown-to-future-date": "0.0.3",
     "react-dom": "^15.3.2",
     "react-paypal-express-checkout": "^1.0.1",
