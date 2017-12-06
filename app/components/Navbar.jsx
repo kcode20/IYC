@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 
-const Navigation = () => (
+export const Navigation = function Navigation (){
+	return (
 	<Navbar inverse collapseOnSelect>
 		<Navbar.Header>
 			<Navbar.Brand>
@@ -16,16 +17,17 @@ const Navigation = () => (
 			<Nav pullRight>
 				<NavItem
 					eventKey={1}
-					onClick={e => this.props.history.push('/registation')}
+					onClick={e => browserHistory.push('/registration')}
 				>
 					Register
 				</NavItem>
-				<NavItem eventKey={2} onClick={e => this.props.history.push('/about')}>
+				<NavItem eventKey={2} onClick={e => browserHistory.push('/about')}>
 					About
 				</NavItem>
 			</Nav>
 		</Navbar.Collapse>
 	</Navbar>
 );
+}
 
 export default Navigation;
