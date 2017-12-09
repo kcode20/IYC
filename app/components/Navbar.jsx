@@ -1,44 +1,34 @@
-import React from 'react'
-import {Link} from 'react-router'
+import React from 'react';
+import { browserHistory, Link } from 'react-router';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 
-export const Navbar = () => (
-    <nav className="navbar navbar-default">
-      <div className="container-fluid">
+export const Navigation = function Navigation() {
+	return (
+		<Navbar inverse collapseOnSelect>
+			<Navbar.Header>
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				<Navbar.Brand>
+					<Link className="navbar-brand" to="/home">
+						<img src="images/iyc.png" height="50px" />
+					</Link>
+				</Navbar.Brand>
+				<Navbar.Toggle />
+			</Navbar.Header>
+			<Navbar.Collapse>
+				<Nav pullRight>
+					<NavItem
+						eventKey={1}
+						onClick={e => browserHistory.push('/registration')}
+					>
+						Register
+				</NavItem>
+					<NavItem eventKey={2} onClick={e => browserHistory.push('/about')}>
+						About
+				</NavItem>
+				</Nav>
+			</Navbar.Collapse>
+		</Navbar>
+	);
+}
 
-        <div className="navbar-header">
-          <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span className="sr-only">Toggle navigation</span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-          </button>
-          <Link className="navbar-brand" to="/home"><img src='images/iyc.png' height='85px' /></Link>
-        </div>
-
-        <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-          <ul className="nav navbar-nav navbar-right">
-            <ul className="nav navbar-nav">
-              <li className="countdown"><p>Countdown</p></li>
-              <li><a href="https://www.facebook.com/afciyc/"><img src="images/Facebook.png"/></a></li>
-              <li><a href="https://www.instagram.com/iyc.afc/"><img src="images/Instagram.png"/></a></li>
-              <li><a href="https://twitter.com/afciyc"><img src="images/Twitter.png"/></a></li>
-            </ul>
-            <br/>
-            <ul className="nav navbar-nav">
-              <li><Link to="/registration">Register</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><a href="https://iycapparel.itemorder.com/">It's Lit Store</a></li>
-            </ul>
-          </ul>
-        </div>
-
-      </div>
-    </nav>
-)
-
-import {login} from 'APP/app/reducers/auth'
-import {connect} from 'react-redux'
-
-export default connect () (Navbar)
-
+export default Navigation;

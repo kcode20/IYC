@@ -11,5 +11,8 @@ public/bundle.js.map
 # NPM errors
 npm-debug.log
 
+#VSCode Settings
+.vscode/settings.json
+
 # Secrets
 secrets.js

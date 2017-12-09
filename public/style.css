@@ -1,64 +1,73 @@
-body{
+body {
 	background-color: black;
 }
-.nav>li>a>img{
-	max-width: 20px;
+/*  Navigation Styles */
+.navbar-brand {
+	padding-bottom: 0px;
+	padding-top: 0px;
 }
 
-.countdown{
+nav.navbar.navbar-inverse {
+	margin-bottom: 0px;
+}
+/* Home Page Styles */
+.carousel-img{
+	width: 100%;
+	height: 400px !important;
+}
+
+@media only screen and (min-width: 500px) {
+	.carousel-img {
+		height: 600px !important;
+	}
+}
+
+/* .countdown {
 	padding-top: 15px;
 	padding-bottom: 15px;
 	color: white;
 }
 
-.countdown p{
+.countdown p {
 	padding-right: 20px;
-	border-right: 1px solid #FFF;
+	border-right: 1px solid #fff;
 }
 
-.navbar-default{
-	background-color: rgba(255, 255, 255, 0);
-	border-color: transparent;
-}
-
-nav.navbar.navbar-default{
-	margin-bottom:20px;
-}
-.home{
-	height:100vh;
-	color:white;
+.home {
+	height: 100vh;
+	color: white;
 	background: url(/images/iyc2.png) no-repeat center center fixed;
-	background-size:cover;
+	background-size: cover;
 }
 
 .vertical-center {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
-.option{
+.option {
 	margin: 2px;
 	font-weight: normal;
 }
 
-.registration-form{
-	background-color:white;
+.registration-form {
+	background-color: white;
 }
 
-.participation{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-  justify-content: center;
+.participation {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
-.participation label{
-	/*margin:10px;*/
+.participation label {
+	/*margin:10px;
 }
 
-.checkbox{
+.checkbox {
 	display: none;
-}
+} */
