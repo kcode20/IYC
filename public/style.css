@@ -13,9 +13,14 @@ nav.navbar.navbar-inverse {
 /* Home Page Styles */
 .carousel-img{
 	width: 100%;
-	height: 600px !important;
+	height: 400px !important;
 }
 
+@media only screen and (min-width: 500px) {
+	.carousel-img {
+		height: 600px !important;
+	}
+}
 
 /* .countdown {
 	padding-top: 15px;

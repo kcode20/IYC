@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from './Navbar';
 import Payments from './Payments';
 import Select from 'react-select';
 import { Link, browserHistory } from 'react-router';

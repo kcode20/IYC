@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from './Navbar'
 import PaypalExpressBtn from 'react-paypal-express-checkout';
 import { Link, browserHistory } from 'react-router';
 import { paypalSandboxKey, paypalProductionKey } from 'APP/secrets'
@@ -46,7 +45,6 @@ export class Payments extends React.Component {
 		}
 		return (
 			<div className="container">
-				<Navbar />
 				<div className="row justify-content-center">
 					<div className="col-md-6 col-md-offset-3 jumbotron">
 						{
