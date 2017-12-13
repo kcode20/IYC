@@ -4,7 +4,7 @@ import { Navbar, Nav, NavItem } from 'react-bootstrap';
 
 export const Navigation = function Navigation() {
 	return (
-		<Navbar inverse collapseOnSelect>
+		<Navbar inverse fixedTop collapseOnSelect>
 			<Navbar.Header>
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<Navbar.Brand>
@@ -21,14 +21,14 @@ export const Navigation = function Navigation() {
 						onClick={e => browserHistory.push('/registration')}
 					>
 						Register
-				</NavItem>
+					</NavItem>
 					<NavItem eventKey={2} onClick={e => browserHistory.push('/about')}>
 						About
-				</NavItem>
+					</NavItem>
 				</Nav>
 			</Navbar.Collapse>
 		</Navbar>
 	);
-}
+};
 
 export default Navigation;
