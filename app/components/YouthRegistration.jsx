@@ -1,15 +1,7 @@
 import React from 'react';
 import { Link, browserHistory } from 'react-router';
 import { Field, reduxForm } from 'redux-form';
-import {
-	FormGroup,
-	ControlLabel,
-	FormControl,
-	Radio,
-	Grid,
-	Row,
-	Col,
-} from 'react-bootstrap';
+import { Grid, Row, Col, Button, ControlLabel } from 'react-bootstrap';
 
 import Payments from './Payments';
 
@@ -30,15 +22,13 @@ export class YouthRegistration extends React.Component {
 						Event Details
 					</Col>
 					<Col xs={12} md={8}>
-						<FormControl.Static>
-							Youth Leader’s Summit (formerly known as the Youth Leader’s
-							Meeting) We’re so excited about the International Youth Conference
-							2018! This year Youth Workers, Youth Leaders, Ministers, Pastors,
-							and other attendees are asked to register for this year’s “Youth
-							Leader’s Summit”. There is a registration price of $10. A portion
-							of the registration proceeds will be sent to help aid in the
-							recovery efforts in the Virgin Islands.
-						</FormControl.Static>
+						Youth Leader’s Summit (formerly known as the Youth Leader’s Meeting)
+						We’re so excited about the International Youth Conference 2018! This
+						year Youth Workers, Youth Leaders, Ministers, Pastors, and other
+						attendees are asked to register for this year’s “Youth Leader’s
+						Summit”. There is a registration price of $10. A portion of the
+						registration proceeds will be sent to help aid in the recovery
+						efforts in the Virgin Islands.
 					</Col>
 					<Col xs={6} md={4}>
 						Personal Information
@@ -49,8 +39,10 @@ export class YouthRegistration extends React.Component {
 							<Field
 								name="name"
 								placeholder="John Doe"
-								component={FormControl}
+								className="form-control"
+								component="input"
 								type="text"
+								required
 							/>
 						</div>
 						<div>
@@ -58,7 +50,8 @@ export class YouthRegistration extends React.Component {
 							<Field
 								name="email"
 								placeholder="email@example.com"
-								component={FormControl}
+								className="form-control"
+								component="input"
 								type="text"
 							/>
 						</div>
@@ -67,7 +60,8 @@ export class YouthRegistration extends React.Component {
 							<Field
 								name="mailing"
 								placeholder="123 Ocean St."
-								component={FormControl}
+								className="form-control"
+								component="input"
 								type="text"
 							/>
 						</div>
@@ -76,7 +70,8 @@ export class YouthRegistration extends React.Component {
 							<Field
 								name="homephone"
 								placeholder="123-456-7890"
-								component={FormControl}
+								className="form-control"
+								component="input"
 								type="text"
 							/>
 						</div>
@@ -85,7 +80,8 @@ export class YouthRegistration extends React.Component {
 							<Field
 								name="homephone"
 								placeholder="123-456-7890"
-								component={FormControl}
+								className="form-control"
+								component="input"
 								type="text"
 							/>
 						</div>
@@ -100,7 +96,8 @@ export class YouthRegistration extends React.Component {
 							<Field
 								name="church"
 								placeholder="Branch 2"
-								component={FormControl}
+								className="form-control"
+								component="input"
 								type="text"
 							/>
 						</div>
@@ -109,29 +106,28 @@ export class YouthRegistration extends React.Component {
 							<Field
 								name="pastor"
 								placeholder="Pastor John Doe"
-								component={FormControl}
+								className="form-control"
+								component="input"
 								type="text"
 							/>
 						</div>
 						<div>
 							<ControlLabel>
-								Are You A Youth Leader or Youth Worker
+								Are You A Youth Leader or Youth Worker?
 							</ControlLabel>
 							<div>
 								<Field
-									name="workertype"
-									component={Radio}
+									name="radioGroup"
+									component="input"
 									type="radio"
 									value="Youth Leader"
-								/>{' '}
-								Youth Leader
+								/>Youth Leader
 								<Field
-									name="workertype"
-									component={Radio}
+									name="radioGroup"
+									component="input"
 									type="radio"
 									value="Youth Worker"
-								/>{' '}
-								Youth Worker
+								/>Youth Worker
 							</div>
 						</div>
 						<div>
@@ -139,7 +135,8 @@ export class YouthRegistration extends React.Component {
 							<Field
 								name="lead"
 								placeholder="#"
-								component={FormControl}
+								className="form-control"
+								component="input"
 								type="text"
 							/>
 						</div>
@@ -148,7 +145,8 @@ export class YouthRegistration extends React.Component {
 							<Field
 								name="auxilary"
 								placeholder="Orchestra, Choir, Outreach"
-								component={FormControl}
+								className="form-control"
+								component="input"
 								type="text"
 							/>
 						</div>
@@ -163,8 +161,8 @@ export class YouthRegistration extends React.Component {
 							</ControlLabel>
 							<Field
 								name="strengths"
-								componentClass="textarea"
-								component={FormControl}
+								className="form-control"
+								component="input"
 								type="text"
 							/>
 						</div>
@@ -174,8 +172,8 @@ export class YouthRegistration extends React.Component {
 							</ControlLabel>
 							<Field
 								name="improvements"
-								componentClass="textarea"
-								component={FormControl}
+								className="form-control"
+								component="input"
 								type="text"
 							/>
 						</div>
@@ -183,18 +181,16 @@ export class YouthRegistration extends React.Component {
 							<ControlLabel>Did you attend IYC 2017?</ControlLabel>
 							<Field
 								name="attendance"
-								component={Radio}
+								component="input"
 								type="radio"
 								value="Yes"
-							/>
-							Yes
+							/>Yes
 							<Field
 								name="attendance"
-								component={Radio}
+								component="input"
 								type="radio"
 								value="No"
-							/>
-							No
+							/>No
 						</div>
 						<div>
 							<ControlLabel>
@@ -202,8 +198,8 @@ export class YouthRegistration extends React.Component {
 							</ControlLabel>
 							<Field
 								name="enjoy_iyc"
-								componentClass="textarea"
-								component={FormControl}
+								className="form-control"
+								component="input"
 								type="text"
 							/>
 						</div>
@@ -214,25 +210,26 @@ export class YouthRegistration extends React.Component {
 							</ControlLabel>
 							<Field
 								name="suggestions_iyc"
-								componentClass="textarea"
-								component={FormControl}
+								className="form-control"
+								component="input"
 								type="text"
 							/>
 						</div>
+						<Link to="/registration/payments">
+							<Button
+								type="submit"
+								disabled={this.props.pristine || this.props.submitting}
+							>
+								Next
+							</Button>
+						</Link>
 					</Col>
-					<button type="submit">Submit</button>
 				</Grid>
 			</form>
 		);
 	}
 }
 
-import { connect } from 'react-redux';
-import { register } from 'APP/app/reducers/registrant';
-
-const mapDispatchToProps = function(dispatch) {};
-const YouthRegistrationForm = reduxForm({ form: 'YouthLeaderRegistration' })(
+export default reduxForm({ form: 'YouthLeaderRegistration' })(
 	YouthRegistration
 );
-
-export default connect(null, mapDispatchToProps)(YouthRegistrationForm);
