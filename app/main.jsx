@@ -11,7 +11,7 @@ import WhoAmI from './components/WhoAmI';
 import NotFound from './components/NotFound';
 import Navbar from './components/Navbar';
 import Registration from './components/Registration';
-import YouthRegistration from './components/YouthRegistration';
+import YouthRegistration from './components/youthSummit/YouthRegistration';
 import About from './components/About';
 import Store from './components/Store';
 import Payments from './components/Payments';
