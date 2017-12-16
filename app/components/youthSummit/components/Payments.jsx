@@ -7,7 +7,7 @@ import { Grid, Row, Col, Button } from 'react-bootstrap';
 
 import { formValueSelector } from 'redux-form';
 
-const YOUTH_SUMMIT_PRICE = 10.0;
+const YOUTH_SUMMIT_PRICE = 20.0;
 const values = formValueSelector('YouthSummitRegistration');
 
 export class Payments extends React.Component {
