@@ -6,24 +6,29 @@ import validate from './validate';
 const EventDetails = ({ handleSubmit }) => (
 	<form onSubmit={handleSubmit}>
 		<Grid>
-			<Col xs={6} md={4}>
-				Event Details
-			</Col>
 			<Col xs={12} md={8}>
-				Youth Leader’s Summit (formerly known as the Youth Leader’s Meeting)
-				We’re so excited about the International Youth Conference 2018! This
-				year Youth Workers, Youth Leaders, Ministers, Pastors, and other
-				attendees are asked to register for this year’s “Youth Leader’s Summit”.
-				There is a registration price of $10. A portion of the registration
-				proceeds will be sent to help aid in the recovery efforts in the Virgin
-				Islands.
+				<div className="chunk">
+					<h3 className="chunk">Event Details</h3>
+					<div className="chunk">
+						<h4>Youth Leader’s Summit</h4>
+						<span>(formerly known as the Youth Leader’s Meeting) </span>
+					</div>
+					<p>
+						We’re so excited about the International Youth Conference 2018! This
+						year Youth Workers, Youth Leaders, Ministers, Pastors, and other
+						attendees are asked to register for this year’s “Youth Leader’s
+						Summit”. There is a registration price of $20. A portion of the
+						registration proceeds will be sent to help aid in the recovery
+						efforts in the Virgin Islands.
+					</p>
+				</div>
+				<div>
+					<Button bsStyle="primary" type="submit" className="next">
+						Next
+					</Button>
+				</div>
 			</Col>
 		</Grid>
-		<div>
-			<Button bsStyle="primary" type="submit" className="next">
-				Next
-			</Button>
-		</div>
 	</form>
 );
 export default reduxForm({

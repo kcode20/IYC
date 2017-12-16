@@ -1,10 +1,7 @@
 const validate = values => {
 	const errors = {};
-	if (!values.firstName) {
+	if (!values.name) {
 		errors.firstName = 'Required';
-	}
-	if (!values.lastName) {
-		errors.lastName = 'Required';
 	}
 	if (!values.email) {
 		errors.email = 'Required';
@@ -13,9 +10,6 @@ const validate = values => {
 	}
 	if (!values.sex) {
 		errors.sex = 'Required';
-	}
-	if (!values.favoriteColor) {
-		errors.favoriteColor = 'Required';
 	}
 	return errors;
 };

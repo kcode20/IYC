@@ -3,7 +3,8 @@ import { Field, reduxForm } from 'redux-form';
 import PaypalExpressBtn from 'react-paypal-express-checkout';
 import { Link, browserHistory } from 'react-router';
 import { paypalSandboxKey, paypalProductionKey } from 'APP/secrets';
-import { Button } from 'react-bootstrap';
+import { Grid, Row, Col, Button } from 'react-bootstrap';
+
 import { formValueSelector } from 'redux-form';
 
 const YOUTH_SUMMIT_PRICE = 10.0;
@@ -26,6 +27,7 @@ export class Payments extends React.Component {
 
 	onSuccess(payment) {
 		this.setState({ complete: true });
+		console.log(this.props.values);
 	}
 
 	onCancel(data) {
@@ -49,42 +51,82 @@ export class Payments extends React.Component {
 		const { handleSubmit, handleBack } = this.props;
 		console.log(values);
 		return (
-			<form className="container" onSubmit={handleSubmit}>
-				<div className="row justify-content-center">
-					<div className="col-md-6 col-md-offset-3 jumbotron">
-						{this.state.issue.exists &&
-						this.state.issue.reason === 'canceled' ? (
-							<div className="alert alert-danger" role="alert">
-								{' '}
-								Oops! It seems as if you canceled your payment. Please try
-								again.
-							</div>
-						) : this.state.issue.reason === 'error' ? (
-							<div className="alert alert-danger" role="alert">
-								{' '}
-								Oops! There was an error processing your payment. Please try
-								again.{' '}
-							</div>
-						) : (
-							''
-						)}
-						<h1> Complete Registration </h1>
-						<PaypalExpressBtn
-							client={client}
-							currency={'USD'}
-							total={YOUTH_SUMMIT_PRICE}
-							onError={this.onError}
-							onSuccess={this.onSuccess}
-							onCancel={this.onCancel}
+			<form onSubmit={handleSubmit}>
+				<Grid className="row" fluid={true}>
+					<Col xs={12} md={8}>
+						<div className="chunk">
+							{this.state.issue.exists &&
+							this.state.issue.reason === 'canceled' ? (
+								<div className="alert alert-danger" role="alert">
+									{' '}
+									Oops! It seems as if you canceled your payment. Please try
+									again.
+								</div>
+							) : this.state.issue.reason === 'error' ? (
+								<div className="alert alert-danger" role="alert">
+									{' '}
+									Oops! There was an error processing your payment. Please try
+									again.{' '}
+								</div>
+							) : (
+								''
+							)}
+							{this.state.complete && (
+								<div className="alert alert-success" role="alert">
+									Your Payment was Recieved! Press Submit.
+								</div>
+							)}
+							<h3> Complete Registration </h3>
+							<p>
+								Registration will be $20 and this is to include lunch onsite. A
+								portion of the registration proceeds will be sent to help aid in
+								the recovery efforts in the Virgin Islands.
+							</p>
+							<p> Click the button below to complete your payment </p>
+							{!this.state.complete && (
+								<PaypalExpressBtn
+									client={client}
+									currency={'USD'}
+									total={YOUTH_SUMMIT_PRICE}
+									onError={this.onError}
+									onSuccess={this.onSuccess}
+									onCancel={this.onCancel}
+									style={{
+										label: 'paypal',
+										size: 'medium',
+										shape: 'rect',
+										color: 'blue',
+										tagline: false,
+									}}
+								/>
+							)}
+						</div>
+						<Field
+							name="payment_recieved"
+							className="form-control"
+							component="input"
+							value={this.state.complete}
+							type="hidden"
 						/>
-					</div>
-				</div>
-				<Button type="button" className="previous" onClick={handleBack}>
-					Previous
-				</Button>
-				<Button bsStyle="primary" type="submit" className="submit">
-					Submit
-				</Button>
+						<Col md={6}>
+							<Button type="button" className="previous" onClick={handleBack}>
+								Previous
+							</Button>
+						</Col>
+						<Col md={6}>
+							{this.state.complete && (
+								<Button
+									bsStyle="primary"
+									type="submit"
+									align="right"
+									className="next"
+								>
+									Submit
+								</Button>
+							)}
+						</Col>
+					</Col>
+				</Grid>
 			</form>
 		);
 	}

@@ -63,6 +63,8 @@ export class YouthRegistration extends React.Component {
 
 	render() {
 		const { page } = this.state;
+		const values = ((this.props.form || {})['YouthSummitRegistration'] || {})
+			.values;
 		console.log(page);
 		return (
 			<div>
@@ -93,6 +95,7 @@ export class YouthRegistration extends React.Component {
 				)}
 				{page === 5 && (
 					<Payments
+						values={values}
 						handleSubmit={this.handleSubmit}
 						handleBack={this.previousPage}
 					/>
