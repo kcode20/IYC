@@ -17,6 +17,7 @@ import PersonalInformation from './components/PersonalInformation';
 import ChurchInformation from './components/ChurchInformation';
 import ProfileQuestions from './components/ProfileQuestions';
 import Payments from './components/Payments';
+import Thanks from './components/Thanks';
 
 /* Registration Form for the Youth Leaders Summit 2018 
 Todo: Find default for the branchname
@@ -45,10 +46,10 @@ export class YouthRegistration extends React.Component {
 			.get(google_script, { params: values })
 			.then(response => {
 				console.log('successfully got response', response);
+				this.setState({ page: this.state.page + 1 });
 			})
 			.catch(error => {
 				alert(error);
-				self.setState(() => ({ submitting: false }));
 			});
 	}
 
@@ -100,6 +101,7 @@ export class YouthRegistration extends React.Component {
 						handleBack={this.previousPage}
 					/>
 				)}
+				{page === 6 && <Thanks />}
 			</div>
 		);
 	}

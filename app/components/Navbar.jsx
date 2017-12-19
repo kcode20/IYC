@@ -22,9 +22,6 @@ export const Navigation = function Navigation() {
 					>
 						Register
 					</NavItem>
-					<NavItem eventKey={2} onClick={e => browserHistory.push('/about')}>
-						About
-					</NavItem>
 				</Nav>
 			</Navbar.Collapse>
 		</Navbar>

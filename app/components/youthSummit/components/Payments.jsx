@@ -92,7 +92,6 @@ export class Payments extends React.Component {
 									onError={this.onError}
 									onSuccess={this.onSuccess}
 									onCancel={this.onCancel}
-									env="production"
 									style={{
 										label: 'paypal',
 										size: 'medium',
