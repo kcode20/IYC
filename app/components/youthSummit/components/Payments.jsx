@@ -73,7 +73,8 @@ export class Payments extends React.Component {
 							)}
 							{this.state.complete && (
 								<div className="alert alert-success" role="alert">
-									Your Payment was Recieved! Press Submit.
+									Your payment was recieved! Please press submit to complete
+									your registration.
 								</div>
 							)}
 							<h3> Complete Registration </h3>
@@ -110,9 +111,11 @@ export class Payments extends React.Component {
 							type="hidden"
 						/>
 						<Col md={6}>
-							<Button type="button" className="previous" onClick={handleBack}>
-								Previous
-							</Button>
+							{!this.state.complete && (
+								<Button type="button" className="previous" onClick={handleBack}>
+									Previous
+								</Button>
+							)}
 						</Col>
 						<Col md={6}>
 							{this.state.complete && (
